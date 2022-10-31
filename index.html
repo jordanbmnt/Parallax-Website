@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Parallax Site</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li>
+                <a href="#" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Work</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <section>
+        <img src="./images/stars.png" id="stars">
+        <img src="./images/moon.png" id="moon">
+        <img src="./images/mountain_background.png" id="mountain_background">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="./images/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum sunt, neque, veniam tenetur iusto voluptatibus tempore odio fugiat, vel assumenda aliquid vero? Temporibus laborum porro doloribus quas quo quis corrupti. Hic iusto iste provident ex, totam ipsam architecto error quam voluptate! Id, odit aspernatur at neque esse placeat. Quidem, ipsa. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi expedita eius totam, autem aliquid ad aut temporibus cumque laudantium! Dicta.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis esse recusandae eaque, beatae nostrum obcaecati ut voluptates impedit perspiciatis eum necessitatibus, optio quaerat eligendi. Quidem, repellat natus? Aspernatur ipsam, molestiae ducimus exercitationem eius consequuntur error incidunt iusto, accusamus natus fugiat nemo ea iste odio voluptatibus. Blanditiis maxime necessitatibus tenetur velit, aspernatur molestiae consequatur enim adipisci ab praesentium sint provident, magni voluptas eveniet reprehenderit? Temporibus dignissimos, cupiditate velit distinctio voluptates, laborum consectetur rerum aliquid odit, in ipsa assumenda quidem error repudiandae voluptatem sint expedita atque accusamus officia ex ea laboriosam? Necessitatibus iure illo maiores consequatur libero nobis porro consequuntur quia eligendi.lorem</p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_front = document.getElementById('mountains_front');
+        let mountain_background = document.getElementById('mountain_background');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header')
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountain_background.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px'
+        })
+    </script>
+</body>
+</html>
